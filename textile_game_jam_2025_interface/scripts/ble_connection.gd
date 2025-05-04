@@ -1,28 +1,14 @@
-extends GodotBLE
-
-signal uart_write(data)
+extends BLEConnection
 
 func _ready() -> void:
-	print(init_adapter_list())
-	set_adapter(0)
-	start_scan()
+	initialize()
+	connect_to_device("pleaseee")
 
-func _process(delta: float) -> void:
-	pass
+func _process(_delta) -> void:
+	process_signals()
 
-func _on_device_found(identifier: String, address: String) -> void:
-	print(identifier, '\t', address)
-	if identifier == 'pleaseee':
-		print("Found device!")
-		stop_scan()
-		var device = get_device_index_from_identifier('pleaseee')
-		print(device)
-		if connect_to_device(device) == 0:
-			print("Connected successfully!")
-		#print(show_all_services())
-		#print(get_current_device_index())
-		#uart_write.emit("track:0:The Creature:over there")
+func _on_message_received(data: String) -> void:
+	print("A MESSAGE HAS BEEN RECEIVED!!!! " + data)
 
-func _on_uart_write(data: String) -> void:
-	print("Starting write...")
-	print(write_data_to_service(0, data))
+func _on_connected() -> void:
+	print("CONNECTION HAS BEEN ESTABLISHED!!!!!")

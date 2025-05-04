@@ -1,0 +1,15 @@
+[package]
+name = "godot_btle"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]  # Compile this crate to a dynamic C library.
+
+[dependencies]
+btleplug = "0.11.8"
+futures = "0.3.31"
+godot = "0.2.4"
+godot-ffi = { version = "0.2.4", features = ["experimental-threads"] }
+godot_tokio = "0.3.0"
+tokio = "1.44.2"

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c3a08rjq0iuh2"]
+
+[ext_resource type="FontFile" uid="uid://dipas25t5mmno" path="res://BBSesque.ttf" id="1_l6xma"]
+
+[resource]
+default_font = ExtResource("1_l6xma")
+default_font_size = 16

@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://d3cupp5fpldq5"]
+[gd_scene load_steps=5 format=3 uid="uid://d3cupp5fpldq5"]
+
+[ext_resource type="Texture2D" uid="uid://lcegu7k0anq0" path="res://art/pixil-layer-0.png" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://34ftx41pnb4e" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://font_theme.tres" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://5l7l4mr8gtj3" path="res://scenes/Output.gd" id="4_lbhrr"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="CreatureSprite" type="Sprite2D" parent="."]
+position = Vector2(156, 57)
+texture = ExtResource("1_uwrxv")
+
+[node name="Output" type="RichTextLabel" parent="."]
+offset_left = 68.0
+offset_top = 105.0
+offset_right = 268.0
+offset_bottom = 161.0
+theme = ExtResource("3_lnu2h")
+bbcode_enabled = true
+text = "Hello!"
+scroll_active = false
+script = ExtResource("4_lbhrr")
+
+[connection signal="gui_input" from="Output" to="Output" method="_on_gui_input"]

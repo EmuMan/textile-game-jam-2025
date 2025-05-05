@@ -2,7 +2,7 @@ use std;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
-use btleplug::api::{Central, CentralEvent, CharPropFlags, Characteristic, Manager as _, Peripheral as _, ScanFilter, WriteType};
+use btleplug::api::{Central, CentralEvent, CharPropFlags, Characteristic, Manager as _, Peripheral as _, ScanFilter};
 use btleplug::platform::{Manager, Peripheral};
 use godot::prelude::*;
 use godot::classes::{ Node, INode };
@@ -159,27 +159,28 @@ impl BLEConnection {
         godot_print!("Exiting connect function!");
     }
 
-    #[func]
-    fn send_message(&self, message: String) {
-        let connection = self.connection.clone();
-        let tx_characteristic = self.tx_characteristic.clone();
-        AsyncRuntime::spawn(async move {
-            godot_print!("Sending message: {}", message);
-            let connection = connection.lock().await;
-            let tx_characteristic = tx_characteristic.lock().await;
-            if let Some(peripheral) = &*connection {
-                if let Some(characteristic) = &*tx_characteristic {
-                    let data = message.as_bytes().to_vec();
-                    peripheral.write(characteristic, &data, WriteType::WithoutResponse).await.unwrap();
-                    godot_print!("Message sent: {}", message);
-                } else {
-                    godot_warn!("No writable characteristic found!");
-                }
-            } else {
-                godot_warn!("Not connected to any device!");
-            }
-        });
-    }
+    // #[func]
+    // fn send_message(&self, message: String) {
+    //     let connection = self.connection.clone();
+    //     let tx_characteristic = self.tx_characteristic.clone();
+    //     AsyncRuntime::spawn(async move {
+    //         godot_print!("Sending message: {}", message);
+    //         let connection = connection.lock().await;
+    //         let tx_characteristic = tx_characteristic.lock().await;
+    //         godot_print!("TEST");
+    //         if let Some(peripheral) = &*connection {
+    //             if let Some(characteristic) = &*tx_characteristic {
+    //                 let data = message.as_bytes().to_vec();
+    //                 peripheral.write(characteristic, &data, WriteType::WithoutResponse).await.unwrap();
+    //                 godot_print!("Message sent: {}", message);
+    //             } else {
+    //                 godot_warn!("No writable characteristic found!");
+    //             }
+    //         } else {
+    //             godot_warn!("Not connected to any device!");
+    //         }
+    //     });
+    // }
 
     #[signal]
     fn connected();

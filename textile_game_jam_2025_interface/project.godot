@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="textile_game_jam_2025_interface"
-run/main_scene="uid://fdayqgh60k51"
+run/main_scene="uid://d3cupp5fpldq5"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

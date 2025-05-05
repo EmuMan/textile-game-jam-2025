@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r5g32uheby7r" path="res://art/background.png" id="2_lnu2h"]
 [ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://font_theme.tres" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d26otgtwruej4" path="res://art/creature_slot.png" id="4_iywne"]
-[ext_resource type="Texture2D" uid="uid://lcegu7k0anq0" path="res://art/swoot.png" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://cvuxlj52xupmd" path="res://art/bebble.png" id="5_iywne"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yqjtg")
@@ -42,6 +42,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_iywne")
 
 [node name="Creature" type="Sprite2D" parent="Info"]
+modulate = Color(0.910876, 0.174277, 0.643699, 1)
 position = Vector2(321, 136)
 scale = Vector2(3, 3)
 texture = ExtResource("5_iywne")
@@ -53,8 +54,10 @@ offset_right = 394.0
 offset_bottom = 291.0
 theme = ExtResource("3_lnu2h")
 bbcode_enabled = true
-text = "Swoot
-Height: 0.5 m"
+text = "Dargon
+Height: 3.96
+Weight: 16.9
+Back"
 scroll_active = false
 horizontal_alignment = 1
 

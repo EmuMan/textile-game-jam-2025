@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpexy2o0adp81"
-path="res://.godot/imported/pixil-layer-11.png-93535287b7fe0d2875b5c3674ffa8ce0.ctex"
+uid="uid://lcegu7k0anq0"
+path="res://.godot/imported/swoot.png-b5e948e3f284c42e4ad67756935672ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-11.png"
-dest_files=["res://.godot/imported/pixil-layer-11.png-93535287b7fe0d2875b5c3674ffa8ce0.ctex"]
+source_file="res://art/swoot.png"
+dest_files=["res://.godot/imported/swoot.png-b5e948e3f284c42e4ad67756935672ae.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

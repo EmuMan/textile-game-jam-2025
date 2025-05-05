@@ -1,26 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3cupp5fpldq5"]
+[gd_scene load_steps=6 format=3 uid="uid://d3cupp5fpldq5"]
 
-[ext_resource type="Texture2D" uid="uid://lcegu7k0anq0" path="res://art/pixil-layer-0.png" id="1_uwrxv"]
-[ext_resource type="Script" uid="uid://34ftx41pnb4e" path="res://scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://34ftx41pnb4e" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://r5g32uheby7r" path="res://art/background.png" id="2_lnu2h"]
 [ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://font_theme.tres" id="3_lnu2h"]
-[ext_resource type="Script" uid="uid://5l7l4mr8gtj3" path="res://scenes/Output.gd" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://d26otgtwruej4" path="res://art/creature_slot.png" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://lcegu7k0anq0" path="res://art/swoot.png" id="5_iywne"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yqjtg")
 
-[node name="CreatureSprite" type="Sprite2D" parent="."]
-position = Vector2(156, 57)
-texture = ExtResource("1_uwrxv")
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("2_lnu2h")
 
-[node name="Output" type="RichTextLabel" parent="."]
-offset_left = 68.0
-offset_top = 105.0
-offset_right = 268.0
-offset_bottom = 161.0
+[node name="Label" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 40.0
+offset_right = 274.0
+offset_bottom = 63.0
+theme = ExtResource("3_lnu2h")
+text = "Your Creatures:"
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="."]
+offset_left = 214.0
+offset_top = 65.0
+offset_right = 440.0
+offset_bottom = 312.0
 theme = ExtResource("3_lnu2h")
 bbcode_enabled = true
-text = "Hello!"
-scroll_active = false
-script = ExtResource("4_lbhrr")
+text = "Hello"
 
-[connection signal="gui_input" from="Output" to="Output" method="_on_gui_input"]
+[node name="Info" type="Node2D" parent="."]
+
+[node name="Background2" type="Sprite2D" parent="Info"]
+position = Vector2(320, 180)
+texture = ExtResource("2_lnu2h")
+
+[node name="CreatureSlot" type="Sprite2D" parent="Info"]
+position = Vector2(321, 136)
+scale = Vector2(3, 3)
+texture = ExtResource("4_iywne")
+
+[node name="Creature" type="Sprite2D" parent="Info"]
+position = Vector2(321, 136)
+scale = Vector2(3, 3)
+texture = ExtResource("5_iywne")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Info"]
+offset_left = 250.0
+offset_top = 204.0
+offset_right = 394.0
+offset_bottom = 291.0
+theme = ExtResource("3_lnu2h")
+bbcode_enabled = true
+text = "Swoot
+Height: 0.5 m"
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="meta_clicked" from="RichTextLabel1" to="." method="_on_rich_text_label_1_meta_clicked"]
+[connection signal="meta_clicked" from="Info/RichTextLabel2" to="." method="_on_rich_text_label_2_meta_clicked"]

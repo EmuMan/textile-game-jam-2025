@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxtevyewdu2tg"
-path="res://.godot/imported/pixil-layer-3.png-7321148bc5bc86542734f3687ead7b85.ctex"
+uid="uid://bpmkrgabi7fgf"
+path="res://.godot/imported/guronk.png-042d4eb52469bd141ea4fad27978c46b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-3.png"
-dest_files=["res://.godot/imported/pixil-layer-3.png-7321148bc5bc86542734f3687ead7b85.ctex"]
+source_file="res://art/guronk.png"
+dest_files=["res://.godot/imported/guronk.png-042d4eb52469bd141ea4fad27978c46b.ctex"]
 
 [params]
 

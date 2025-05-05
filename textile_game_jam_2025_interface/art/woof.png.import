@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnicekp4ssed7"
-path="res://.godot/imported/pixil-layer-9.png-84cc2b7820ec241dfac4ae05378c7a2f.ctex"
+uid="uid://cy3mu68h265ws"
+path="res://.godot/imported/woof.png-e77f442168c77a2d8daeec191b106934.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-9.png"
-dest_files=["res://.godot/imported/pixil-layer-9.png-84cc2b7820ec241dfac4ae05378c7a2f.ctex"]
+source_file="res://art/woof.png"
+dest_files=["res://.godot/imported/woof.png-e77f442168c77a2d8daeec191b106934.ctex"]
 
 [params]
 

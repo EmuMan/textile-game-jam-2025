@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkrgabi7fgf"
-path="res://.godot/imported/pixil-layer-8.png-fd093243df426b016707d30fb7cf0a3e.ctex"
+uid="uid://b4pvnvl6q57sr"
+path="res://.godot/imported/echogloom.png-c73d2afc844b13d16efe445004a9428e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-8.png"
-dest_files=["res://.godot/imported/pixil-layer-8.png-fd093243df426b016707d30fb7cf0a3e.ctex"]
+source_file="res://art/echogloom.png"
+dest_files=["res://.godot/imported/echogloom.png-c73d2afc844b13d16efe445004a9428e.ctex"]
 
 [params]
 

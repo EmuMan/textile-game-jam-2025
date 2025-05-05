@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4pvnvl6q57sr"
-path="res://.godot/imported/pixil-layer-7.png-d4ad6d034a6e2d78a30639efb700eaf0.ctex"
+uid="uid://cy3gbiua770w4"
+path="res://.godot/imported/bebble.png-9b7e3c1828bc5b3f24a6d9507dd811be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-7.png"
-dest_files=["res://.godot/imported/pixil-layer-7.png-d4ad6d034a6e2d78a30639efb700eaf0.ctex"]
+source_file="res://art/bebble.png"
+dest_files=["res://.godot/imported/bebble.png-9b7e3c1828bc5b3f24a6d9507dd811be.ctex"]
 
 [params]
 

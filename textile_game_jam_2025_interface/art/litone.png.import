@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3gbiua770w4"
-path="res://.godot/imported/pixil-layer-6.png-48da519bff6881d90721ab9496b961f3.ctex"
+uid="uid://bnicekp4ssed7"
+path="res://.godot/imported/litone.png-6dfb004c9754af3009e9ba34650ec688.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-6.png"
-dest_files=["res://.godot/imported/pixil-layer-6.png-48da519bff6881d90721ab9496b961f3.ctex"]
+source_file="res://art/litone.png"
+dest_files=["res://.godot/imported/litone.png-6dfb004c9754af3009e9ba34650ec688.ctex"]
 
 [params]
 

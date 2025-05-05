@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nhtsevevtarl"
-path="res://.godot/imported/pixil-layer-12.png-f07bafd2441f934d240e229a60ee377a.ctex"
+uid="uid://cpexy2o0adp81"
+path="res://.godot/imported/inicort.png-42eca9c9c19f9f428adde160815c147f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-12.png"
-dest_files=["res://.godot/imported/pixil-layer-12.png-f07bafd2441f934d240e229a60ee377a.ctex"]
+source_file="res://art/inicort.png"
+dest_files=["res://.godot/imported/inicort.png-42eca9c9c19f9f428adde160815c147f.ctex"]
 
 [params]
 

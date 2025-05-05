@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lcegu7k0anq0"
-path="res://.godot/imported/pixil-layer-0.png-c0d3e2bb98113cabf431c41226c3c740.ctex"
+uid="uid://cxtevyewdu2tg"
+path="res://.godot/imported/amigup.png-e944b3c18c6bf696d728f0a2cce79141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-0.png"
-dest_files=["res://.godot/imported/pixil-layer-0.png-c0d3e2bb98113cabf431c41226c3c740.ctex"]
+source_file="res://art/amigup.png"
+dest_files=["res://.godot/imported/amigup.png-e944b3c18c6bf696d728f0a2cce79141.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

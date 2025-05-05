@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btfujwve7n41j"
-path="res://.godot/imported/pixil-layer-10.png-a2532639ff2d6e4a69b936e7707ddb87.ctex"
+uid="uid://cpsurflxjde1b"
+path="res://.godot/imported/duobeak.png-516483f228855b23ecaa9ac2cbb2109c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-10.png"
-dest_files=["res://.godot/imported/pixil-layer-10.png-a2532639ff2d6e4a69b936e7707ddb87.ctex"]
+source_file="res://art/duobeak.png"
+dest_files=["res://.godot/imported/duobeak.png-516483f228855b23ecaa9ac2cbb2109c.ctex"]
 
 [params]
 

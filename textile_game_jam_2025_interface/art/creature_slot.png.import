@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://unsk7oaqfdmf"
-path="res://.godot/imported/pixil-layer-5.png-c21564c78987110fcd54cc3ac0bb59be.ctex"
+uid="uid://d26otgtwruej4"
+path="res://.godot/imported/creature_slot.png-4033f18ca20fb1c067b269bfa3b05da2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-5.png"
-dest_files=["res://.godot/imported/pixil-layer-5.png-c21564c78987110fcd54cc3ac0bb59be.ctex"]
+source_file="res://art/creature_slot.png"
+dest_files=["res://.godot/imported/creature_slot.png-4033f18ca20fb1c067b269bfa3b05da2.ctex"]
 
 [params]
 

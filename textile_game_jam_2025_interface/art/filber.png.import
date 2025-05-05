@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3mu68h265ws"
-path="res://.godot/imported/pixil-layer-1.png-b870a3ce1eaf584c06be3c5704779715.ctex"
+uid="uid://nhtsevevtarl"
+path="res://.godot/imported/filber.png-645a205c75e5ac40b3c4fdf8d025c470.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/pixil-layer-1.png"
-dest_files=["res://.godot/imported/pixil-layer-1.png-b870a3ce1eaf584c06be3c5704779715.ctex"]
+source_file="res://art/filber.png"
+dest_files=["res://.godot/imported/filber.png-645a205c75e5ac40b3c4fdf8d025c470.ctex"]
 
 [params]
 

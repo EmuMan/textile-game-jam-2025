@@ -2,7 +2,7 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 # Each item in creature_data is: [sprite texture, height min, height max, weight min, weight max]
-var colors = [Color(0.69, 0.043, 0.204), Color(0.87, 0.443, 0.07), Color(0.09, 0.639, 0.392), Color(0.189, 0.608, 0.63), Color(0.21, 0.539, 0.942), Color(0.59, 0.074, 0.615), Color(0.911, 0.174, 0.644)]
+var colors = [Color(0.69, 0.043, 0.204), Color(1.0, 0.433, 0.0), Color(0.09, 0.639, 0.392), Color(0.189, 0.608, 0.63), Color(0.21, 0.539, 0.942), Color(0.59, 0.074, 0.615), Color(0.911, 0.174, 0.644)]
 var creature_data = {
 	"Swoot" : ["res://art/swoot.png", 0.4, 0.8, 0.12, 7.2],
 	"Woof" : ["res://art/woof.png", 0.7, 1.1, 42.2, 110.0],
@@ -27,12 +27,11 @@ func _ready() -> void:
 	$RichTextLabel1.clear()
 	$Info.visible = false
 	
-	caught()
-	caught()
+	for i in range(50):
+		caught()
 
 
 func caught():
-	print("Creature caught!")
 	# Pick random variabels for the new creature
 	var c = creature_data.keys()[randi() % creature_data.size()] # Get creature name
 	var height = snappedf(rng.randf_range(creature_data[c][1], creature_data[c][2]), 0.01)
@@ -44,7 +43,6 @@ func caught():
 	$RichTextLabel1.push_meta(index)
 	$RichTextLabel1.push_color(color)
 	$RichTextLabel1.append_text(c + "\n")
-	print("current_creatures: ", current_creatures)
 
 
 # Display the clicked creature

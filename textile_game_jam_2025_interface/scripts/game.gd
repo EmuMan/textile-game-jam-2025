@@ -27,8 +27,8 @@ func _ready() -> void:
 	$RichTextLabel1.clear()
 	$Info.visible = false
 	
-	for i in range(50):
-		caught()
+	#for i in range(50):
+		#caught()
 
 
 func caught():

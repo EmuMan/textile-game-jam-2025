@@ -22,13 +22,9 @@ var creature_data = {
 #         0 : ["Filber", 7, 6, color, false]
 var current_creatures = {0 : ["Filber", 7, 6, Color(0.09, 0.639, 0.392), false]}
 
-
 func _ready() -> void:
 	$RichTextLabel1.clear()
 	$Info.visible = false
-	
-	for i in range(50):
-		caught()
 
 
 func caught():
@@ -47,6 +43,8 @@ func caught():
 
 # Display the clicked creature
 func _on_rich_text_label_1_meta_clicked(meta: Variant) -> void:
+	if $Info.visible == true:
+		return
 	# meta = index of clicked creature
 	$Info.visible = true
 	$Info/RichTextLabel2.clear()

@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="textile_game_jam_2025_interface"
+config/name="Creature Catcher"
 run/main_scene="uid://bkhmndrm0no54"
 config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0.14, 0.14, 0.14, 0)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]

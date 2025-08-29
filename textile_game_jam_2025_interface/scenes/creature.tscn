@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://y3f2fuxo1mcj"]
+
+[ext_resource type="Texture2D" uid="uid://nv8n76e627el" path="res://art/filber.png" id="1_upmfi"]
+
+[node name="Creature" type="Node2D"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_upmfi")

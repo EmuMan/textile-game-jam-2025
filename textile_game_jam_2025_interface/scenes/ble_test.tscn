@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c0ibid2accimj" path="res://scripts/ble_connection.gd" id="1_47qvx"]
 
-[node name="BleTest" type="Node2D"]
-
-[node name="BLEConnection" type="BLEConnection" parent="."]
+[node name="BLEConnection" type="BLEConnection"]
 script = ExtResource("1_47qvx")
 
-[connection signal="connected" from="BLEConnection" to="BLEConnection" method="_on_connected"]
-[connection signal="message_received" from="BLEConnection" to="BLEConnection" method="_on_message_received"]
+[connection signal="connected" from="." to="." method="_on_connected"]
+[connection signal="message_received" from="." to="." method="_on_message_received"]

@@ -1,8 +1,9 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
-# Each item in creature_data is: [sprite texture, height min, height max, weight min, weight max]
+var gamemode = "external" # Can be either "virtual" or "external"
 var colors = [Color(0.69, 0.043, 0.204), Color(1.0, 0.433, 0.0), Color(0.09, 0.639, 0.392), Color(0.189, 0.608, 0.63), Color(0.21, 0.539, 0.942), Color(0.59, 0.074, 0.615), Color(0.911, 0.174, 0.644)]
+# Each item in creature_data is: [sprite texture, height min, height max, weight min, weight max]
 var creature_data = {
 	"Swoot" : ["res://art/swoot.png", 0.4, 0.8, 0.12, 7.2],
 	"Woof" : ["res://art/woof.png", 0.7, 1.1, 42.2, 110.0],
@@ -19,13 +20,46 @@ var creature_data = {
 # Each item in current_creatures is a list like this: 
 #     index : [creature name, height, weight, boolean for whether creature has been seen or not]
 # Example:
-#         0 : ["Filber", 7, 6, color, false]
-var current_creatures = {0 : ["Filber", 7, 6, Color(0.09, 0.639, 0.392), false]}
+#         0 : ["Filber", 7, 6, Color(0.09, 0.639, 0.392), false]
+var current_creatures = {}
+# Virtual Game Variables
+var player_class = preload("res://scenes/player.tscn")
+var creature_class = preload("res://scenes/creature.tscn")
+var player_instance = null
+var creature = null
 
 func _ready() -> void:
-	$RichTextLabel1.clear()
-	$Info.visible = false
+	# Set up virtual device game
+	if has_node("VirtualDevice/CatchButton"):
+		gamemode = "virtual"
+		$UI.visible = false
+		get_node("VirtualDevice").captured.connect(caught)
+		get_node("VirtualDevice").add_creature.connect(add_creature)
+		# Add player and creature
+		player_instance = player_class.instantiate()
+		player_instance.global_position = Vector2(320, 180)
+		add_child(player_instance)
+		get_node("VirtualDevice").player = player_instance
+		add_creature()
+	# Set up external device game
+	if has_node("BLEConnection"):
+		gamemode = "external"
+		get_node("BLEConnection").captured.connect(caught)
+	$UI/RichTextLabel1.clear()
+	$UI/Info.visible = false
 
+func rerender_creature_list():
+	$UI/RichTextLabel1.clear()
+	for i in range(current_creatures.size()):
+		$UI/RichTextLabel1.push_meta(i)
+		$UI/RichTextLabel1.push_color(current_creatures[i][3])
+		if current_creatures[i][4]: # Creature has been seen
+			$UI/RichTextLabel1.append_text(current_creatures[i][0] + "\n")
+		else: # Creature has not been seen
+			$UI/RichTextLabel1.append_text(current_creatures[i][0])
+			$UI/RichTextLabel1.pop_all()
+			$UI/RichTextLabel1.push_color(Color(1.0, 1.0, 1.0))
+			$UI/RichTextLabel1.append_text("[bounce] - New![/bounce]\n")
 
 func caught():
 	# Pick random variabels for the new creature
@@ -35,29 +69,41 @@ func caught():
 	var color = colors[randi() % colors.size()]
 	# Add new creature to the current_creatures list
 	var index = current_creatures.size()
-	current_creatures[index] = [c, height, weight, color, false] #Add new creature entry
-	$RichTextLabel1.push_meta(index)
-	$RichTextLabel1.push_color(color)
-	$RichTextLabel1.append_text(c + "\n")
-
+	current_creatures[index] = [c, height, weight, color, false] # Add new creature entry
+	rerender_creature_list()
 
 # Display the clicked creature
 func _on_rich_text_label_1_meta_clicked(meta: Variant) -> void:
-	if $Info.visible == true:
+	if $UI/Info.visible == true:
 		return
 	# meta = index of clicked creature
-	$Info.visible = true
-	$Info/RichTextLabel2.clear()
-	$Info/RichTextLabel2.append_text(current_creatures[meta][0] + "\n")
-	$Info/RichTextLabel2.append_text("Height: " + str(current_creatures[meta][1]) + " m\n")
-	$Info/RichTextLabel2.append_text("Weight: " + str(current_creatures[meta][2]) + " kg\n")
+	current_creatures[meta][4] = true # Mark this creature as seen
+	$UI/Info.visible = true
+	$UI/Info/RichTextLabel2.clear()
+	$UI/Info/RichTextLabel2.append_text(current_creatures[meta][0] + "\n")
+	$UI/Info/RichTextLabel2.append_text("Height: " + str(current_creatures[meta][1]) + " m\n")
+	$UI/Info/RichTextLabel2.append_text("Weight: " + str(current_creatures[meta][2]) + " kg\n")
 	
 	# Set creature texture
-	$Info/Creature.texture = load(creature_data[current_creatures[meta][0]][0])
-	$Info/Creature.modulate = current_creatures[meta][3]
+	$UI/Info/Creature.texture = load(creature_data[current_creatures[meta][0]][0])
+	$UI/Info/Creature.modulate = current_creatures[meta][3]
 	# Back button
-	$Info/RichTextLabel2.append_text("[url]Back[/url]\n")
-
+	$UI/Info/RichTextLabel2.append_text("[url]Back[/url]\n")
 
 func _on_rich_text_label_2_meta_clicked(_meta: Variant) -> void:
-	$Info.visible = false
+	rerender_creature_list()
+	# Hide info
+	$UI/Info.visible = false
+
+# Virtual Game Functions
+func _input(e):
+	if gamemode == "external": return
+	if e.is_action_pressed("toggle_creaturedex"):
+		$UI.visible = !$UI.visible
+
+func add_creature():
+	var creature_instance = creature_class.instantiate()
+	creature_instance.global_position.x = player_instance.global_position.x + randi_range(-1450, 1450)
+	creature_instance.global_position.y = player_instance.global_position.y + randi_range(-1450, 1450)
+	add_child(creature_instance)
+	get_node("VirtualDevice").creature = creature_instance

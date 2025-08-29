@@ -1,20 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3cupp5fpldq5"]
+[gd_scene load_steps=8 format=3 uid="uid://d3cupp5fpldq5"]
 
 [ext_resource type="Script" uid="uid://34ftx41pnb4e" path="res://scripts/game.gd" id="1_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://r5g32uheby7r" path="res://art/background.png" id="2_lnu2h"]
-[ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://font_theme.tres" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://d26otgtwruej4" path="res://art/creature_slot.png" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://r5g32uheby7r" path="res://art/ui/background.png" id="2_lnu2h"]
+[ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://custom_resources/font_theme.tres" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://d26otgtwruej4" path="res://art/ui/creature-slot.png" id="4_iywne"]
+[ext_resource type="Script" uid="uid://b60mcoxupnvv7" path="res://custom_resources/richtext_bounce.gd" id="4_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cvuxlj52xupmd" path="res://art/bebble.png" id="5_iywne"]
-[ext_resource type="Script" uid="uid://c0ibid2accimj" path="res://scripts/ble_connection.gd" id="6_p57ef"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_gee14"]
+script = ExtResource("4_u5sy4")
+metadata/_custom_type_script = "uid://b60mcoxupnvv7"
+
+[node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
 
-[node name="Background1" type="Sprite2D" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background1" type="Sprite2D" parent="UI"]
 position = Vector2(320, 180)
 texture = ExtResource("2_lnu2h")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="UI"]
 offset_left = 174.0
 offset_top = 40.0
 offset_right = 274.0
@@ -22,33 +28,35 @@ offset_bottom = 63.0
 theme = ExtResource("3_lnu2h")
 text = "Your Creatures:"
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="."]
-offset_left = 214.0
+[node name="RichTextLabel1" type="RichTextLabel" parent="UI"]
+offset_left = 211.0
 offset_top = 65.0
-offset_right = 435.0
+offset_right = 413.0
 offset_bottom = 312.0
 theme = ExtResource("3_lnu2h")
 bbcode_enabled = true
 text = "Hello"
+custom_effects = [SubResource("RichTextEffect_gee14")]
 
-[node name="Info" type="Node2D" parent="."]
+[node name="Info" type="Node2D" parent="UI"]
+visible = false
 
-[node name="Background2" type="Sprite2D" parent="Info"]
+[node name="Background2" type="Sprite2D" parent="UI/Info"]
 position = Vector2(320, 180)
 texture = ExtResource("2_lnu2h")
 
-[node name="CreatureSlot" type="Sprite2D" parent="Info"]
+[node name="CreatureSlot" type="Sprite2D" parent="UI/Info"]
 position = Vector2(321, 136)
 scale = Vector2(3, 3)
 texture = ExtResource("4_iywne")
 
-[node name="Creature" type="Sprite2D" parent="Info"]
+[node name="Creature" type="Sprite2D" parent="UI/Info"]
 modulate = Color(1, 0.433333, 0, 1)
 position = Vector2(321, 136)
 scale = Vector2(3, 3)
 texture = ExtResource("5_iywne")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Info"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/Info"]
 offset_left = 250.0
 offset_top = 204.0
 offset_right = 394.0
@@ -62,11 +70,5 @@ Back"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="BLEConnection" type="BLEConnection" parent="."]
-script = ExtResource("6_p57ef")
-
-[connection signal="meta_clicked" from="RichTextLabel1" to="." method="_on_rich_text_label_1_meta_clicked"]
-[connection signal="meta_clicked" from="Info/RichTextLabel2" to="." method="_on_rich_text_label_2_meta_clicked"]
-[connection signal="captured" from="BLEConnection" to="." method="caught"]
-[connection signal="connected" from="BLEConnection" to="BLEConnection" method="_on_connected"]
-[connection signal="message_received" from="BLEConnection" to="BLEConnection" method="_on_message_received"]
+[connection signal="meta_clicked" from="UI/RichTextLabel1" to="." method="_on_rich_text_label_1_meta_clicked"]
+[connection signal="meta_clicked" from="UI/Info/RichTextLabel2" to="." method="_on_rich_text_label_2_meta_clicked"]

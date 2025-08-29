@@ -1,0 +1,465 @@
+[gd_scene load_steps=19 format=3 uid="uid://b27kilx0h03sb"]
+
+[ext_resource type="Script" uid="uid://cib4whqciafl4" path="res://scripts/virtual_device.gd" id="1_x8mbw"]
+[ext_resource type="Texture2D" uid="uid://vuhci3eskbmb" path="res://art/ui/virtual-device.png" id="2_nlo1f"]
+[ext_resource type="Texture2D" uid="uid://burdq8ueh5u0j" path="res://art/ui/device-normal.png" id="3_trew8"]
+[ext_resource type="Texture2D" uid="uid://boivb7t0q7kgh" path="res://art/ui/device-pressed.png" id="4_guic0"]
+[ext_resource type="Texture2D" uid="uid://ll5bweu6npk6" path="res://art/ui/bulb.png" id="5_0flw0"]
+[ext_resource type="Texture2D" uid="uid://rlhx6prbsqk" path="res://art/ui/device-hover.png" id="5_bkdaw"]
+[ext_resource type="Texture2D" uid="uid://cotrajr4oly85" path="res://art/ui/under.png" id="5_nlo1f"]
+[ext_resource type="Texture2D" uid="uid://ud3yh8ret2ao" path="res://art/ui/over.png" id="6_fv5sa"]
+[ext_resource type="Texture2D" uid="uid://cyxbsle4pi8d5" path="res://art/ui/progress.png" id="6_nlo1f"]
+[ext_resource type="Script" uid="uid://bhelss7j8kq3t" path="res://scenes/respawn_cooldown_bar.gd" id="7_25g16"]
+[ext_resource type="Texture2D" uid="uid://sjcvhxkexam5" path="res://art/ui/pixil-layer-Normal (3).png" id="10_b1rhn"]
+[ext_resource type="Theme" uid="uid://c3a08rjq0iuh2" path="res://custom_resources/font_theme.tres" id="10_fv5sa"]
+[ext_resource type="Texture2D" uid="uid://csusmldv4gfd7" path="res://art/ui/pixil-layer-Pressed (1).png" id="11_u2xjn"]
+[ext_resource type="Texture2D" uid="uid://hkk0o5gxcd10" path="res://art/ui/pixil-layer-Hover (2).png" id="12_trew8"]
+[ext_resource type="Texture2D" uid="uid://dc08furra8m02" path="res://art/ui/pixil-layer-Layer 1 (3).png" id="13_u2xjn"]
+
+[sub_resource type="Animation" id="Animation_rq6de"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bulbs/Bulb0:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bulbs/Bulb1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bulbs/Bulb2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bulbs/Bulb3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bulbs/Bulb4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bulbs/Bulb5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bulbs/Bulb6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bulbs/Bulb7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bulbs/Bulb8:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Bulbs/Bulb9:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_0flw0"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bulbs/Bulb0:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bulbs/Bulb1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bulbs/Bulb2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bulbs/Bulb3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bulbs/Bulb4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bulbs/Bulb5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bulbs/Bulb6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Bulbs/Bulb7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bulbs/Bulb8:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Bulbs/Bulb9:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlgvh"]
+_data = {
+&"RESET": SubResource("Animation_rq6de"),
+&"flash": SubResource("Animation_0flw0")
+}
+
+[node name="VirtualDevice" type="CanvasLayer"]
+script = ExtResource("1_x8mbw")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(535, 227)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nlo1f")
+
+[node name="RespawnButton" type="TextureButton" parent="."]
+offset_left = 545.0
+offset_top = 257.0
+offset_right = 557.0
+offset_bottom = 266.0
+scale = Vector2(2, 2)
+focus_mode = 0
+texture_normal = ExtResource("3_trew8")
+texture_pressed = ExtResource("4_guic0")
+texture_hover = ExtResource("5_bkdaw")
+
+[node name="RespawnCooldownBar" type="TextureProgressBar" parent="."]
+offset_left = 12.0
+offset_top = 183.0
+offset_right = 25.0
+offset_bottom = 268.0
+scale = Vector2(2, 2)
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("5_nlo1f")
+texture_over = ExtResource("6_fv5sa")
+texture_progress = ExtResource("6_nlo1f")
+tint_under = Color(1, 1, 1, 0)
+tint_over = Color(0.803922, 0.831373, 0.815686, 1)
+tint_progress = Color(0.682353, 0.137255, 0.203922, 1)
+script = ExtResource("7_25g16")
+
+[node name="Timer" type="Timer" parent="RespawnCooldownBar"]
+autostart = true
+
+[node name="CatchButton" type="TextureButton" parent="."]
+offset_left = 545.0
+offset_top = 281.0
+offset_right = 557.0
+offset_bottom = 290.0
+scale = Vector2(2, 2)
+focus_mode = 0
+texture_normal = ExtResource("3_trew8")
+texture_pressed = ExtResource("4_guic0")
+texture_hover = ExtResource("5_bkdaw")
+
+[node name="CatchTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Bulbs" type="Node2D" parent="."]
+position = Vector2(557, 279)
+
+[node name="Bulb0" type="Sprite2D" parent="Bulbs"]
+position = Vector2(-15, -31)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb1" type="Sprite2D" parent="Bulbs"]
+position = Vector2(5, -33)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb2" type="Sprite2D" parent="Bulbs"]
+position = Vector2(21, -27)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb3" type="Sprite2D" parent="Bulbs"]
+position = Vector2(33, -13)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb4" type="Sprite2D" parent="Bulbs"]
+position = Vector2(35, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb5" type="Sprite2D" parent="Bulbs"]
+position = Vector2(15, 31)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb6" type="Sprite2D" parent="Bulbs"]
+position = Vector2(-5, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb7" type="Sprite2D" parent="Bulbs"]
+position = Vector2(-23, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb8" type="Sprite2D" parent="Bulbs"]
+position = Vector2(-33, 11)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="Bulb9" type="Sprite2D" parent="Bulbs"]
+position = Vector2(-35, -9)
+scale = Vector2(2, 2)
+texture = ExtResource("5_0flw0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vlgvh")
+}
+autoplay = "RESET"
+
+[node name="InfoButton" type="TextureButton" parent="."]
+offset_left = 603.0
+offset_top = 7.0
+offset_right = 618.0
+offset_bottom = 23.0
+scale = Vector2(2, 2)
+focus_mode = 0
+texture_normal = ExtResource("10_b1rhn")
+texture_pressed = ExtResource("11_u2xjn")
+texture_hover = ExtResource("12_trew8")
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="CatchArrow" type="Sprite2D" parent="Tutorial"]
+position = Vector2(557, 303)
+scale = Vector2(2, 2)
+texture = ExtResource("13_u2xjn")
+
+[node name="RespawnArrow" type="Sprite2D" parent="Tutorial"]
+position = Vector2(557, 253)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("13_u2xjn")
+
+[node name="Label" type="Label" parent="Tutorial"]
+offset_left = 289.0
+offset_top = 214.0
+offset_right = 473.0
+offset_bottom = 306.0
+theme = ExtResource("10_fv5sa")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+text = "When all lights flash green, you're close enough to the creature to catch it!"
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Tutorial"]
+offset_left = 500.0
+offset_top = 199.0
+offset_right = 614.0
+offset_bottom = 234.0
+theme = ExtResource("10_fv5sa")
+theme_override_colors/font_outline_color = Color(0.682353, 0.137255, 0.203922, 1)
+theme_override_constants/line_spacing = -3
+theme_override_constants/outline_size = 9
+text = "RESPAWN
+CREATURE"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Tutorial"]
+offset_left = 541.0
+offset_top = 328.0
+offset_right = 578.0
+offset_bottom = 346.0
+theme = ExtResource("10_fv5sa")
+theme_override_colors/font_outline_color = Color(0.682353, 0.137255, 0.203922, 1)
+theme_override_constants/outline_size = 9
+text = "CATCH"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Tutorial"]
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 237.0
+offset_bottom = 67.0
+theme = ExtResource("10_fv5sa")
+text = "Click 'E' to view your creatures."
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Tutorial"]
+offset_left = 50.0
+offset_top = 313.0
+offset_right = 299.0
+offset_bottom = 348.0
+theme = ExtResource("10_fv5sa")
+text = "You can only respawn a creature when the respawn meter is full."
+autowrap_mode = 2
+
+[connection signal="pressed" from="RespawnButton" to="." method="_on_respawn_button_pressed"]
+[connection signal="timeout" from="RespawnCooldownBar/Timer" to="RespawnCooldownBar" method="_on_timer_timeout"]
+[connection signal="pressed" from="CatchButton" to="." method="_on_catch_button_pressed"]
+[connection signal="timeout" from="CatchTimer" to="." method="_on_catch_timer_timeout"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
